@@ -7,14 +7,15 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 
-class Leave extends ActiveRecord
+class Branch extends ActiveRecord
 {
 
     public static function tableName()
     {
-        return 'leavetypes';
+        return 'branch';
+
+
     }
-    
     public function behaviors()
    {
         return [
@@ -29,8 +30,8 @@ class Leave extends ActiveRecord
     {
         return[
 
-           [['leave_type','description'],'required'],
-           ['leave_type','unique'],
+           [['branch_name','branch_short_name','branch_code'],'required'],
+           ['branch_code','unique'],
            [['status', 'created_by' ,'created_at' ,'updated_at','updated_by'],'safe']
 
         ];
@@ -39,8 +40,8 @@ class Leave extends ActiveRecord
     public function attributeLabels()
     {
         return [
-            'leave_type'=>'Leave Type',
-            'description'=>'Description',
+            'branch_name'=>'Branch Name',
+            'branch_code'=>'Branch Code'
         ];
     }
 }

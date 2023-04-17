@@ -21,14 +21,6 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
-
-    //    'assets/img/favicon.png',
-    //    'assets/img/apple-touch-icon.png',
-     
-       
-    //    'https://fonts.gstatic.com',
-    //    ',https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i',
-
        'assets/vendor/bootstrap/css/bootstrap.min.css',
        'assets/vendor/bootstrap-icons/bootstrap-icons.css',
         'assets/vendor/boxicons/css/boxicons.min.css',
@@ -37,10 +29,7 @@ class AppAsset extends AssetBundle
     'assets/vendor/remixicon/remixicon.css',
         'assets/vendor/simple-datatables/style.css',
 
-   
-    // 'https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css',
     'css/styles.css',
-        
         'css/style.css',
        'css/bootstrap.css',
 'css/dataTables.bootstrap4.min.css',

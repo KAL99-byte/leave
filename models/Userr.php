@@ -7,12 +7,12 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\db\Expression;
 
-class Employee extends ActiveRecord
+class Userr extends ActiveRecord
 {
 
     public static function tableName()
     {
-        return 'employees';
+        return 'users';
 
 
     }
@@ -30,8 +30,10 @@ class Employee extends ActiveRecord
     {
         return[
 
-           [['first_name','last_name','email','gender','birth_date','dept_name','address','city'],'required'],
+           [['first_name','last_name','email','gender','birth_date','branch_name','address','city','phone_number','password','role','user_name'],'required'],
            ['email','email'],
+           [['password'], 'string', 'min' => 8],
+         
            ['email','unique'],
            [['status', 'created_by' ,'created_at' ,'updated_at','updated_by'],'safe'],
 
@@ -46,7 +48,7 @@ class Employee extends ActiveRecord
             'email'=>'Email',
             'gender'=>'Gender',
             'birth_date'=>'Birth date',
-            'dept_name'=>'Department Name',
+            'branch_name'=>'Branch Name',
             'address'=>'Address',
             'city'=>'City',
             'phone_number'=>'Phone Number',

@@ -1,12 +1,12 @@
 <?php
 use yii\helpers\html;
 use yii\helpers\Url;
-$this->title = 'Employee Management';
+$this->title = 'User';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <p align="right">
-<a class="btn btn-sm btn-primary" href="<?= Url::to(['employees/addemp']) ?>" role="button">+Add Employee</a>
+<a class="btn btn-sm btn-primary" href="<?= Url::to(['userrs/addusr']) ?>" role="button">+Add user</a>
 </p>
 <div class="container">
   <div class="card">
@@ -21,11 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
       <th scope="col">Email</th>
       <th scope="col">Gender</th>
       <th scope="col">Birth Date</th>
-      <th scope="col">Department Name</th>
+      <th scope="col">Branch Name</th>
       <th scope="col">Address</th>
       <th scope="col">City</th>
       <th scope="col">Phone Number</th>
-      <th scope="col">Password</th>
+      <th scope="col">Role</th>
+      <th scope="col">Username</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -38,14 +39,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <td><?php  echo $field->email; ?></td>
 <td><?php  echo $field->gender; ?></td>
 <td><?php  echo $field->birth_date; ?></td>
-<td><?php  echo $field->dept_name; ?></td>
+<td><?php  echo $field->branch_name; ?></td>
 <td><?php  echo $field->address; ?></td>
 <td><?php  echo $field->city; ?></td>
 <td><?php  echo $field->phone_number; ?></td>
-<td><?php  echo $field->password; ?></td>
+<td><?php  echo $field->role; ?></td>
+<td><?php  echo $field->user_name; ?></td>
 
-<td> <?php echo  Html::a("Edit",['employees/edit','uid'=>$field->id],['class'=>'badge badge-primary']); ?>|
-<?php echo   Html::a("Delete",['employees/del','uid'=>$field->id],['class'=>'badge badge-danger',
+<td> <?php echo  Html::a("Edit",['userrs/edit','uid'=>$field->id],['class'=>'badge badge-primary']); ?>|
+<?php echo   Html::a("Delete",['userrs/del','uid'=>$field->id],['class'=>'badge badge-danger',
 'data-confirm'=>'are you sure?',
 'data-method'=>'post']); ?>
 </td>

@@ -2,13 +2,13 @@
 use yii\helpers\html;
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\ArrayHelper;
-use app\models\Department;
+use app\models\Branch;
 use yii\helpers\Url;
 
 
 
 
-$this->title = 'Add Employee';
+$this->title = 'Add User';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php
@@ -23,19 +23,21 @@ $gender = [
         'Dar-es-salaam'=>'Dar-es-salaam',
         'Mwanza'=>'Mwanza',
         'Mbeya'=>'Mbeya',
+        'Mtwara'=>'Mtwara',
+        'Songea'=>'Songea',
     ];
 
 
-    $dp=Department::find()->all();
+    $dp=Branch::find()->all();
 
-    $listData=ArrayHelper::map($dp,'dept_name','dept_name');
+    $listData=ArrayHelper::map($dp,'branch_name','branch_name');
 
     
    
 ?>
 
 <p align="left">
-<a class="btn btn-sm btn-primary" href="<?= Url::to(['employees/empman']) ?>" role="button">Back</a>
+<a class="btn btn-sm btn-primary" href="<?= Url::to(['userrs/usrman']) ?>" role="button">Back</a>
 </p>
 
 <div class="container">
@@ -71,7 +73,7 @@ $gender = [
 
 </div>
 <div class="form-group col-md-6">
-  <?= $form->field($model, 'dept_name')->dropDownList($listData,['prompt'=>'--Select department--']); ?>
+  <?= $form->field($model, 'branch_name')->dropDownList($listData,['prompt'=>'--Select branch--']); ?>
 </div>
 </div>
 <div class="form-row">
@@ -91,12 +93,19 @@ $gender = [
 </div>
 <div class="form-group col-md-6">
   
-  <?= $form->field($model,'password')->textInput(['placeholder'=>'Password']); ?>
+  <?= $form->field($model,'password')->textInput(['placeholder'=>'Enter Password'])->passwordInput(); ?>
 </div>
 </div>
 <div class="form-row">
 
-
+<div class="form-group col-md-6">
+  
+  <?= $form->field($model,'role')->textInput(['placeholder'=>'Role']); ?>
+</div>
+<div class="form-group col-md-6">
+  
+  <?= $form->field($model,'user_name')->textInput(['placeholder'=>'user name']); ?>
+</div>
 
 
 </div>
